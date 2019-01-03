@@ -1,0 +1,204 @@
+
+
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7//themes/icon.css"/>
+<!--2个js文件 ,要先引入jquery,然后再引入easyui-->
+<script src="jquery-easyui-1.6.7/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery-easyui-1.6.7/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/MainPage.css"/>
+<!--
+<div class="easyui-dialog" style="width:400px;height:200px"
+     data-options="title:'My Dialog',collapsible:true,iconCls:'icon-ok',onOpen:function(){}">
+    dialog content.
+</div>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<h2>Basic Layout</h2>
+<body class="easyui-layout" onload="addHomeTab('xxx','HomePage')">
+<script type="text/javascript">
+    function addTab(title, url){
+        if ($('#tt').tabs('exists', title)){
+                $('#tt').tabs('select', title);
+            }
+        else {
+                var content = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
+                $('#tt').tabs('add',{
+                title:title,
+                content:content,
+                closable:true
+            });
+        }
+    }
+    function addHomeTab(title, url){
+        if ($('#tt').tabs('exists', title)){
+            $('#tt').tabs('select', title);
+        }
+        else {
+            var content = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
+            $('#tt').tabs('add',{
+                title:title,
+                content:content,
+                closable:false
+            });
+        }
+    }
+    $('#leftMenu').accordion({fit:true,selected:-1});
+
+</script>
+<script>
+
+        //alert(combobox_data1);
+        var data = $.parseJSON(combobox_data1);
+        alert(data);
+        $('#language').combobox('reload', data)
+    }
+
+</script>
+<style type="text/css">
+    A.a1:link,A.a1:visited{
+        display:block;
+        font-weight:bold;
+        font-size:14px;
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        background-color: white;
+        color: black;
+        width:100%px;
+        text-align:center;
+        padding:4px;
+        text-decoration:none;
+    }
+    A.a1:hover,A.a1:active
+    {
+        background-color:#b8eecf;
+    }
+
+
+</style>
+<!--
+导航栏，将分成两块，左和右
+-->
+<div data-options="region:'north',split:true" style="height:60px;">
+    <div class="navbar">
+        <div class="navbar-brand">
+            Bosch
+        </div>
+    </div>
+
+</div>
+
+<!--底部导航栏，将分成两块，左和右-->
+<!--左边的菜单栏-->
+<div data-options="region:'west',title:'菜单栏',split:true" style="width:250px;">
+    <div id="leftMenu" class="easyui-accordion" data-options="multiple:true" style="height: auto; fit:true;">
+        <div title="敏捷开发" style="overflow:auto;">
+            <a href="#" class="a1" onclick="addTab('baidu1','http://www.baidu.com')" >
+                <div>
+                    代码生成器
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+            <a href="#" class="a1" onclick="addTab('baidu2','http://www.baidu.com')" >
+                <div>
+                    单页管理
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+            <a href="#" class="a1" onclick="addTab('baidu3','http://www.baidu.com')" >
+                <div>
+                    开发实例
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+        </div>
+        <div title="敏捷开发"  style="overflow:auto;">
+            <a href="#" class="a1" onclick="addTab('google','http://www.baidu.com')" >
+                <div>
+                    代码生成器
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+            <a href="#" class="a1" onclick="addTab('google','http://www.baidu.com')" >
+                <div>
+                    单页管理
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+            <a href="#" class="a1" onclick="addTab('google','http://www.baidu.com')" >
+                <div>
+                    开发实例
+                </div> <!-- 这里每个div就是一个面板 -->
+            </a>
+        </div>
+        <div title="Tree Menu">
+            <ul id="tt1" class="easyui-tree">
+                <li>
+                    <span>Folder1</span>
+                    <ul>
+                        <li>
+                            <span>Sub Folder 1</span>
+                            <ul>
+                                <li><span>File 11</span></li>
+                                <li><span>File 12</span></li>
+                                <li><span>File 13</span></li>
+                            </ul>
+                        </li>
+                        <li><span>File 2</span></li>
+                        <li><span>File 3</span></li>
+                    </ul>
+                </li>
+                <li><span>File2</span></li>
+            </ul>
+        </div>
+        <div title="Tree Menu">
+            <ul id="tt2" class="easyui-tree">
+                <li>
+                    <span>Folder1</span>
+                    <ul>
+                        <li>
+                            <span>Sub Folder 1</span>
+                            <ul>
+                                <li><span>File 11</span></li>
+                                <li><span>File 12</span></li>
+                                <li><span>File 13</span></li>
+                            </ul>
+                        </li>
+                        <li><span>File 2</span></li>
+                        <li><span>File 3</span></li>
+                    </ul>
+                </li>
+                <li><span>File2</span></li>
+            </ul>
+        </div>
+        <div title="Tree Menu">
+            <ul id="tt3" class="easyui-tree">
+                <li>
+                    <span>Folder1</span>
+                    <ul>
+                        <li>
+                            <span>Sub Folder 1</span>
+                            <ul>
+                                <li><span>File 11</span></li>
+                                <li><span>File 12</span></li>
+                                <li><span>File 13</span></li>
+                            </ul>
+                        </li>
+                        <li><span>File 2</span></li>
+                        <li><span>File 3</span></li>
+                    </ul>
+                </li>
+                <li><span>File2</span></li>
+            </ul>
+        </div>
+        <div title="" selected style="padding:0px;"></div>
+    </div>
+
+</div>
+<div data-options="region:'center',title:false,split:false" style="padding:5px;background:#eee;">
+    <div id="tt" class="easyui-tabs" style="width:100%;height:100%;">
+
+    </div>
+</div>
+</body>
+</body>
+</html>

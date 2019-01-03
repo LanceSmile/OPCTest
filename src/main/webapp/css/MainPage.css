@@ -1,0 +1,50 @@
+html, body
+{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+
+    font-family:微软雅黑;
+    font-size:13px;
+}
+.navbar {
+    height: 50px;
+    background: #95B8E7;
+    border-bottom: 0;
+}
+.navbar-header {
+    float: left;
+}
+.navbar-brand {
+    width: 250px;
+    background: White;
+    cursor: default;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    padding: 15px 15px;
+    line-height: 20px;
+    text-align: center;
+    color: red;
+}
+
+.sidebar-toggle {
+    height: 30px;
+    line-height: 30px;
+    color: #aeb9c2;
+    background-color: #4a5064;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+.menu {
+    position: relative;
+    cursor: pointer;
+    background: #42485b;
+    color: #fff;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
